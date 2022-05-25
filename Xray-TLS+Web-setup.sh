@@ -3230,7 +3230,7 @@ install_update_xray_tls_web()
         [ -e $HOME/.acme.sh/acme.sh ] && $HOME/.acme.sh/acme.sh --uninstall
         rm -rf $HOME/.acme.sh
         curl https://get.acme.sh | sh
-        $HOME/.acme.sh/acme.sh --register-account -ak ec-256 --server zerossl -m "my@example.com"
+        $HOME/.acme.sh/acme.sh --register-account -ak ec-256 --server letsencrypt -m "my@example.com"
     fi
     $HOME/.acme.sh/acme.sh --upgrade --auto-upgrade
     get_all_certs
@@ -3462,7 +3462,7 @@ reinit_domain()
     $HOME/.acme.sh/acme.sh --uninstall
     rm -rf $HOME/.acme.sh
     curl https://get.acme.sh | sh
-    $HOME/.acme.sh/acme.sh --register-account -ak ec-256 --server zerossl -m "my@example.com"
+    $HOME/.acme.sh/acme.sh --register-account -ak ec-256 --server letsencrypt -m "my@example.com"
     $HOME/.acme.sh/acme.sh --upgrade --auto-upgrade
     unset domain_list
     unset true_domain_list
